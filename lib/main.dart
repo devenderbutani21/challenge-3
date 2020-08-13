@@ -220,54 +220,132 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 50,
                 ),
                 Row(
                   children: <Widget>[
                     Container(
                       margin: EdgeInsets.only(
-                        left: 10,
+                        left: 20,
+//                        bottom: 30.0,
                       ),
-                      height: 280,
-                      width: 240,
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16.0),
-                        ),
-                        elevation: 10,
-                        color: Colors.red.withOpacity(0.2),
-                        child: Stack(
-                          children: <Widget>[
-                            Container(
-                              margin: EdgeInsets.only(
-                                left: 20,
-                                bottom: 50,
-                              ),
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                      'https://cdn.pixabay.com/photo/2016/03/09/10/23/model-1246028_1280.jpg'),
+                      width: 220.0,
+                      height: 270.0,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                      child: Stack(
+                        overflow: Overflow.visible,
+                        children: [
+                          Positioned(
+                            top: -30,
+                            left: 10,
+                            child: Image.asset(
+                              'assets/images/pro-vac.png',
+                              width: 200.0,
+                              height: 200.0,
+                            ),
+                          ),
+                          Positioned(
+                            top: 160,
+                            left: 15,
+                            child: Container(
+                              height: 50,
+                              child: Center(
+                                child: Text(
+                                  'Pro-Vac Venco',
+                                  style: TextStyle(
+                                    fontSize: 22.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          Positioned(
+                            top: 185,
+                            left: 15,
+                            child: Container(
+                              height: 50,
+                              child: Center(
+                                child: Text(
+                                  'by baximo',
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.grey,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 220,
+                            left: 15,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  '\$34.50',
+                                  style: TextStyle(
+                                    fontSize: 24.0,
+                                    color: Colors.orange,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  margin: EdgeInsets.only(
+                                    left: 60,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    color: Colors.orange,
+                                  ),
+                                  child: IconButton(
+                                    icon: Icon(Icons.shopping_bag_outlined),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
-                Container(
-                  alignment: Alignment.topLeft,
-                  margin: EdgeInsets.only(top: 20, left: 20),
-                  child: Text(
-                    'Sanitizer',
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.white,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      alignment: Alignment.topLeft,
+                      margin: EdgeInsets.only(top: 20, left: 20),
+                      child: Text(
+                        'Sanitation',
+                        style: TextStyle(
+                          fontSize: 24,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ),
-                  ),
+                    Container(
+                      alignment: Alignment.topLeft,
+                      margin: EdgeInsets.only(
+                        top: 20,
+                        right: 10,
+                      ),
+                      child: Text(
+                        'All',
+                        style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
