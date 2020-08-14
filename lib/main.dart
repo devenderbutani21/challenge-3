@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './widgets/floating_navbar.dart';
@@ -16,7 +15,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,6 +38,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _index = 0;
   MenuItems _selected = MenuItems.vaccine;
+  bool _all = false;
 
   @override
   Widget build(BuildContext context) {
@@ -222,100 +221,195 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 50,
                 ),
-                Row(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(
-                        left: 20,
-//                        bottom: 30.0,
-                      ),
-                      width: 220.0,
-                      height: 270.0,
-                      decoration: BoxDecoration(
-                        color: Colors.grey.withOpacity(0.2),
-                        borderRadius: BorderRadius.circular(24.0),
-                      ),
-                      child: Stack(
-                        overflow: Overflow.visible,
-                        children: [
-                          Positioned(
-                            top: -30,
-                            left: 10,
-                            child: Image.asset(
-                              'assets/images/pro-vac.png',
-                              width: 200.0,
-                              height: 200.0,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 20,
+                        ),
+                        width: 220.0,
+                        height: 270.0,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(24.0),
+                        ),
+                        child: Stack(
+                          overflow: Overflow.visible,
+                          children: [
+                            Positioned(
+                              top: -30,
+                              left: 10,
+                              child: Image.asset(
+                                'assets/images/pro-vac.png',
+                                width: 200.0,
+                                height: 200.0,
+                              ),
                             ),
-                          ),
-                          Positioned(
-                            top: 160,
-                            left: 15,
-                            child: Container(
-                              height: 50,
-                              child: Center(
-                                child: Text(
-                                  'Pro-Vac Venco',
-                                  style: TextStyle(
-                                    fontSize: 22.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                            Positioned(
+                              top: 160,
+                              left: 15,
+                              child: Container(
+                                height: 50,
+                                child: Center(
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      
+                                    },
+                                    child: Text(
+                                      'Pro-Vac Venco',
+                                      style: TextStyle(
+                                        fontSize: 22.0,
+                                        color: Colors.white,
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          Positioned(
-                            top: 185,
-                            left: 15,
-                            child: Container(
-                              height: 50,
-                              child: Center(
-                                child: Text(
-                                  'by baximo',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.grey,
+                            Positioned(
+                              top: 185,
+                              left: 15,
+                              child: Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text(
+                                    'by baximo',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.grey,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          Positioned(
-                            top: 220,
-                            left: 15,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: <Widget>[
-                                Text(
-                                  '\$34.50',
-                                  style: TextStyle(
-                                    fontSize: 24.0,
-                                    color: Colors.orange,
-                                    fontWeight: FontWeight.bold,
+                            Positioned(
+                              top: 220,
+                              left: 15,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    '\$34.50',
+                                    style: TextStyle(
+                                      fontSize: 24.0,
+                                      color: Colors.orange,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  height: 40,
-                                  width: 40,
-                                  margin: EdgeInsets.only(
-                                    left: 60,
+                                  Container(
+                                    height: 40,
+                                    width: 40,
+                                    margin: EdgeInsets.only(
+                                      left: 60,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      color: Colors.orange,
+                                    ),
+                                    child: IconButton(
+                                      icon: Icon(Icons.shopping_bag_outlined),
+                                      onPressed: () {},
+                                    ),
                                   ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    color: Colors.orange,
-                                  ),
-                                  child: IconButton(
-                                    icon: Icon(Icons.shopping_bag_outlined),
-                                    onPressed: () {},
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                      Container(
+                        margin: EdgeInsets.only(
+                          left: 20,
+                        ),
+                        width: 220.0,
+                        height: 270.0,
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(24.0),
+                        ),
+                        child: Stack(
+                          overflow: Overflow.visible,
+                          children: [
+                            Positioned(
+                              top: -140,
+                              left: -80,
+                              child: Image.asset(
+                                'assets/images/live-b1.png',
+                                width: 400.0,
+                                height: 400.0,
+                              ),
+                            ),
+                            Positioned(
+                              top: 160,
+                              left: 15,
+                              child: Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text(
+                                    'Disease Vaccine',
+                                    style: TextStyle(
+                                      fontSize: 22.0,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 185,
+                              left: 15,
+                              child: Container(
+                                height: 50,
+                                child: Center(
+                                  child: Text(
+                                    'by b1 Strain',
+                                    style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 220,
+                              left: 15,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Text(
+                                    '\$21.44',
+                                    style: TextStyle(
+                                      fontSize: 24.0,
+                                      color: Colors.orange,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 40,
+                                    width: 40,
+                                    margin: EdgeInsets.only(
+                                      left: 60,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      color: Colors.orange,
+                                    ),
+                                    child: IconButton(
+                                      icon: Icon(Icons.shopping_bag_outlined),
+                                      onPressed: () {},
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -327,7 +421,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         'Sanitation',
                         style: TextStyle(
                           fontSize: 24,
-                          color: Colors.grey,
+                          color: Colors.white70,
                         ),
                       ),
                     ),
@@ -335,18 +429,203 @@ class _MyHomePageState extends State<MyHomePage> {
                       alignment: Alignment.topLeft,
                       margin: EdgeInsets.only(
                         top: 20,
-                        right: 10,
+                        right: 20,
                       ),
-                      child: Text(
-                        'All',
-                        style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.grey,
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _all = !_all;
+                          });
+                        },
+                        child: Text(
+                          'All',
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                     ),
                   ],
                 ),
+                Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 20,
+                        top: 10,
+                      ),
+                      height: 180,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            top: 20,
+                            left: 65,
+                            child: Container(
+                              child: Text(
+                                'Mask',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: -40,
+                            left: 10,
+                            child: Container(
+                              child: Image.asset(
+                                'assets/images/kn95-mask.png',
+                                height: 160,
+                                width: 160,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 20,
+                        top: 10,
+                      ),
+                      height: 180,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            top: 20,
+                            left: 65,
+                            child: Container(
+//                              margin: EdgeInsets.only(
+//                                top: 20,
+//                              ),
+                              child: Text(
+                                'Gloves',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: -40,
+                            left: 10,
+                            child: Container(
+                              child: Image.asset(
+                                'assets/images/gloves.png',
+                                height: 160,
+                                width: 160,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                _all ? SizedBox() : SizedBox(height: 10,),
+                    _all ? SizedBox() : Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 20,
+                        top: 10,
+                      ),
+                      height: 180,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            top: 20,
+                            left: 50,
+                            child: Container(
+//                              margin: EdgeInsets.only(
+//                                top: 20,
+//                              ),
+                              child: Text(
+                                'Vaccine',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: -40,
+                            left: 10,
+                            child: Container(
+                              child: Image.asset(
+                                'assets/images/syringe.png',
+                                height: 160,
+                                width: 160,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        left: 20,
+                        top: 10,
+                      ),
+                      height: 180,
+                      width: 180,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned(
+                            top: 20,
+                            left: 30,
+                            child: Container(
+//                              margin: EdgeInsets.only(
+//                                top: 20,
+//                              ),
+                              child: Text(
+                                'Hand Sanitizer',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            bottom: -40,
+                            left: 10,
+                            child: Container(
+                              child: Image.asset(
+                                'assets/images/hand-sanitizer.png',
+                                height: 160,
+                                width: 160,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ) ,
               ],
             ),
           ),
