@@ -16,6 +16,7 @@ class ProductDetailsScreen extends StatefulWidget {
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   itemQuantity _selectedQuantity = itemQuantity.fifty;
   int _quantity = 0;
+  Color _color = Color(0xffFFD35A);
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +139,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       '\$34.50',
                       style: TextStyle(
                         fontSize: 28.0,
-                        color: Colors.orange,
+                        color: _color,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -325,11 +326,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               Container(
                 margin: EdgeInsets.only(
                   top: 40,
+                  bottom: 20,
                 ),
                 height: 60,
                 width: 400,
                 decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: _color,
                   borderRadius: BorderRadius.circular(15.0),
                 ),
                 child: Row(

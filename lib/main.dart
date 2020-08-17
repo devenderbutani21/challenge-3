@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Home',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.yellow,
         canvasColor: Color(0xff2b2c30),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _index = 0;
   MenuItems _selected = MenuItems.vaccine;
   bool _all = false;
+  Color _color = Color(0xffFFD35A);
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Container(
                             width: 14.0,
                             height: 3.0,
-                            color: Colors.orange,
+                            color: _color,
                           ),
                           SizedBox(
                             height: 3.0,
@@ -113,217 +114,218 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 15,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _selected = MenuItems.vaccine;
-                        });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: _selected == MenuItems.vaccine
-                              ? Colors.white
-                              : Colors.grey.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          'Vaccine',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                Container(
+                  padding: EdgeInsets.only(
+                    bottom: 40,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selected = MenuItems.vaccine;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
                             color: _selected == MenuItems.vaccine
-                                ? Colors.black
-                                : Colors.white,
+                                ? Colors.white
+                                : Colors.grey.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text(
+                            'Vaccine',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: _selected == MenuItems.vaccine
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _selected = MenuItems.sanitizer;
-                        });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: _selected == MenuItems.sanitizer
-                              ? Colors.white
-                              : Colors.grey.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          'Sanitizer',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selected = MenuItems.sanitizer;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
                             color: _selected == MenuItems.sanitizer
-                                ? Colors.black
-                                : Colors.white,
+                                ? Colors.white
+                                : Colors.grey.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text(
+                            'Sanitizer',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: _selected == MenuItems.sanitizer
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _selected = MenuItems.mask;
-                        });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: _selected == MenuItems.mask
-                              ? Colors.white
-                              : Colors.grey.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          'Mask',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selected = MenuItems.mask;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
                             color: _selected == MenuItems.mask
-                                ? Colors.black
-                                : Colors.white,
+                                ? Colors.white
+                                : Colors.grey.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text(
+                            'Mask',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: _selected == MenuItems.mask
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _selected = MenuItems.gloves;
-                        });
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: _selected == MenuItems.gloves
-                              ? Colors.white
-                              : Colors.grey.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Text(
-                          'Gloves',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            _selected = MenuItems.gloves;
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          decoration: BoxDecoration(
                             color: _selected == MenuItems.gloves
-                                ? Colors.black
-                                : Colors.white,
+                                ? Colors.white
+                                : Colors.grey.withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Text(
+                            'Gloves',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: _selected == MenuItems.gloves
+                                  ? Colors.black
+                                  : Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 50,
+                    ],
+                  ),
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(
-                          left: 20,
-                        ),
-                        width: 220.0,
-                        height: 270.0,
-                        decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(24.0),
-                        ),
-                        child: Stack(
-                          overflow: Overflow.visible,
-                          children: [
-                            Positioned(
-                              top: -30,
-                              left: 10,
-                              child: Image.asset(
-                                'assets/images/pro-vac.png',
-                                width: 200.0,
-                                height: 200.0,
-                              ),
+                      Stack(
+                        overflow: Overflow.visible,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(
+                              left: 20,
                             ),
-                            Positioned(
-                              top: 160,
-                              left: 15,
-                              child: Container(
-                                height: 50,
-                                child: Center(
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      Navigator.of(context).pushNamed(
-                                          ProductDetailsScreen.routeName);
-                                    },
-                                    child: Text(
-                                      'Pro-Vac Venco',
-                                      style: TextStyle(
-                                        fontSize: 22.0,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
+                            width: 220.0,
+                            height: 270.0,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.withOpacity(0.2),
+                              borderRadius: BorderRadius.circular(24.0),
                             ),
-                            Positioned(
-                              top: 185,
-                              left: 15,
-                              child: Container(
-                                height: 50,
-                                child: Center(
+                          ),
+                          Positioned(
+                            top: -5,
+                            left: 50,
+                            child: Image.asset(
+                              'assets/images/pro-vac.png',
+                              width: 180.0,
+                              height: 180.0,
+                            ),
+                          ),
+                          Positioned(
+                            top: 160,
+                            left: 30,
+                            child: Container(
+                              height: 50,
+                              child: Center(
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).pushNamed(
+                                        ProductDetailsScreen.routeName);
+                                  },
                                   child: Text(
-                                    'by baximo',
+                                    'Pro-Vac Venco',
                                     style: TextStyle(
-                                      fontSize: 16.0,
-                                      color: Colors.grey,
+                                      fontSize: 22.0,
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                            Positioned(
-                              top: 220,
-                              left: 15,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  Text(
-                                    '\$34.50',
-                                    style: TextStyle(
-                                      fontSize: 24.0,
-                                      color: Colors.orange,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                          ),
+                          Positioned(
+                            top: 185,
+                            left: 30,
+                            child: Container(
+                              height: 50,
+                              child: Center(
+                                child: Text(
+                                  'by baximo',
+                                  style: TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.grey,
                                   ),
-                                  Container(
-                                    height: 40,
-                                    width: 40,
-                                    margin: EdgeInsets.only(
-                                      left: 60,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                      color: Colors.orange,
-                                    ),
-                                    child: IconButton(
-                                      icon: Icon(Icons.shopping_bag_outlined),
-                                      onPressed: () {},
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          Positioned(
+                            top: 220,
+                            left: 40,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  '\$34.50',
+                                  style: TextStyle(
+                                    fontSize: 24.0,
+                                    color: _color,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Container(
+                                  height: 40,
+                                  width: 40,
+                                  margin: EdgeInsets.only(
+                                    left: 60,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    color: _color,
+                                  ),
+                                  child: IconButton(
+                                    icon: Icon(Icons.shopping_bag_outlined),
+                                    onPressed: () {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                       Container(
                         margin: EdgeInsets.only(
@@ -339,12 +341,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           overflow: Overflow.visible,
                           children: [
                             Positioned(
-                              top: -140,
+                              top: -90,
                               left: -80,
                               child: Image.asset(
                                 'assets/images/live-b1.png',
-                                width: 400.0,
-                                height: 400.0,
+                                width: 350.0,
+                                height: 350.0,
                               ),
                             ),
                             Positioned(
@@ -390,7 +392,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     '\$21.44',
                                     style: TextStyle(
                                       fontSize: 24.0,
-                                      color: Colors.orange,
+                                      color: _color,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
@@ -402,7 +404,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     ),
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(8.0),
-                                      color: Colors.orange,
+                                      color: _color,
                                     ),
                                     child: IconButton(
                                       icon: Icon(Icons.shopping_bag_outlined),
@@ -484,13 +486,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Positioned(
-                            bottom: -40,
-                            left: 10,
+                            bottom: -10,
+                            left: 20,
                             child: Container(
                               child: Image.asset(
                                 'assets/images/kn95-mask.png',
-                                height: 160,
-                                width: 160,
+                                height: 150,
+                                width: 150,
                               ),
                             ),
                           ),
@@ -527,13 +529,13 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                           Positioned(
-                            bottom: -40,
-                            left: 10,
+                            bottom: -10,
+                            left: 20,
                             child: Container(
                               child: Image.asset(
                                 'assets/images/gloves.png',
-                                height: 160,
-                                width: 160,
+                                height: 150,
+                                width: 150,
                               ),
                             ),
                           ),
@@ -543,13 +545,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 _all
-                    ? SizedBox()
-                    : SizedBox(
+                    ? SizedBox(
                         height: 10,
-                      ),
+                      )
+                    : SizedBox(),
                 _all
-                    ? SizedBox()
-                    : Row(
+                    ? Row(
                         children: <Widget>[
                           Container(
                             margin: EdgeInsets.only(
@@ -568,9 +569,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                   top: 20,
                                   left: 50,
                                   child: Container(
-//                              margin: EdgeInsets.only(
-//                                top: 20,
-//                              ),
                                     child: Text(
                                       'Vaccine',
                                       style: TextStyle(
@@ -581,13 +579,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                                 Positioned(
-                                  bottom: -40,
-                                  left: 10,
+                                  bottom: -10,
+                                  left: 20,
                                   child: Container(
                                     child: Image.asset(
                                       'assets/images/syringe.png',
-                                      height: 160,
-                                      width: 160,
+                                      height: 140,
+                                      width: 140,
                                     ),
                                   ),
                                 ),
@@ -621,13 +619,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ),
                                 ),
                                 Positioned(
-                                  bottom: -40,
-                                  left: 10,
+                                  bottom: -10,
+                                  left: 20,
                                   child: Container(
                                     child: Image.asset(
                                       'assets/images/hand-sanitizer.png',
-                                      height: 160,
-                                      width: 160,
+                                      height: 140,
+                                      width: 140,
                                     ),
                                   ),
                                 ),
@@ -635,7 +633,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                         ],
-                      ),
+                      )
+                    : SizedBox(),
               ],
             ),
           ),
@@ -647,7 +646,7 @@ class _MyHomePageState extends State<MyHomePage> {
             right: 35.0,
           ),
           backgroundColor: Colors.grey.shade400.withOpacity(0.2),
-          selectedBackgroundColor: Colors.orange,
+          selectedBackgroundColor: _color,
           unselectedItemColor: Colors.grey.shade200,
           onTap: (int val) => setState(() => _index = val),
           currentIndex: _index,
